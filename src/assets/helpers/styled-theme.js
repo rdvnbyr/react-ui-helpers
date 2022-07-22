@@ -36,6 +36,18 @@ export const styledTheme = {
       light: '#f44336',
       contrast: '#ffffff',
     },
+    light: {
+      base: '#f5f5f5',
+      dark: '#e0e0e0',
+      light: '#f5f5f5',
+      contrast: '#000000',
+    },
+    dark: {
+      base: '#000d10',
+      dark: '#070809',
+      light: '#001d24',
+      contrast: '#ffffff',
+    },
     black: '#000000',
     white: '#ffffff',
     gray: {
