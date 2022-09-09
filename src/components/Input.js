@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export default function Input(props) {
+function Input(props) {
   return (
     <StyledInputContainer>
       {props.label && <StyledLabel>{props.label}</StyledLabel>}
@@ -9,6 +9,8 @@ export default function Input(props) {
     </StyledInputContainer>
   );
 }
+
+export { Input };
 
 const StyledInputContainer = styled.div`
   display: flex;

@@ -1,13 +1,11 @@
 import styled, { css } from 'styled-components';
+import { darken } from 'polished';
 
 export default function Button(props) {
   return <StyledButton {...props}>{props.children}</StyledButton>;
 }
 
 const StyledButton = styled.button`
-  background-color: ${(props) => props.theme.colors.default.base};
-  color: ${(props) => props.theme.colors.default.contrast};
-  border: 1px solid ${(props) => props.theme.colors.default.base};
   border-radius: ${(props) => props.theme.shape.borderRadius[props.radius] || '0'};
   padding: ${(props) => props.theme.units.padding[props.size] || '0'};
   font-size: ${(props) => props.theme.units.font.size[props.size] || 'inherit'};
@@ -15,11 +13,6 @@ const StyledButton = styled.button`
     props.theme.units.font.weight[props.fw] || props.theme.units.font.weight.regular};
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: ${(props) => props.theme.colors.default.dark};
-    color: ${(props) => props.theme.colors.default.contrast};
-    border: 1px solid ${(props) => props.theme.colors.default.dark};
-  }
   &:active {
     transform: translateY(0.25rem);
   }
@@ -31,9 +24,9 @@ const StyledButton = styled.button`
       color: ${(props) => props.theme.colors[props.color].contrast};
       border: 1px solid ${(props) => props.theme.colors[props.color].base};
       &:hover {
-        background-color: ${(props) => props.theme.colors[props.color].dark};
+        background-color: ${darken(0.1, props.theme.colors[props.color].base)};
         color: ${(props) => props.theme.colors[props.color].contrast};
-        border: 1px solid ${(props) => props.theme.colors[props.color].dark};
+        border: 1px solid ${darken(0.1, props.theme.colors[props.color].base)};
       }
     `}
   ${(props) =>
