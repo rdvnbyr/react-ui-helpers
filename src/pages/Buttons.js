@@ -3,11 +3,15 @@ import Button from '../components/Button';
 import styled from 'styled-components';
 import { colors, shapes, sizes } from '../assets/helpers/theme-helper';
 
+const Title = ({text}) => (
+  <h1 style={{ margin: '1rem', borderBottom: ".5px solid gray", color: "GrayText" }}>{text}</h1>
+)
+
 export default function Buttons() {
   return (
     <div>
       <div>
-        <h1 style={{ margin: '1rem' }}>Sizes</h1>
+        <Title text={"Sizes"} />
         {sizes.map((size) => (
           <ButtonContainer>
             {colors.map((color) => (
@@ -26,7 +30,7 @@ export default function Buttons() {
       </div>
 
       <div>
-        <h1 style={{ margin: '1rem' }}>Outlined</h1>
+      <Title text={"Outlined"} />
         {sizes.map((size) => (
           <ButtonContainer>
             {colors.map((color) => (
@@ -49,7 +53,7 @@ export default function Buttons() {
       </div>
 
       <div>
-        <h1 style={{ margin: '1rem' }}>Inverted</h1>
+        <Title text={"Inverted"} />
         {sizes.map((size) => (
           <ButtonContainer>
             {colors.map((color) => (
@@ -72,7 +76,7 @@ export default function Buttons() {
       </div>
 
       <div>
-        <h1 style={{ margin: '1rem' }}>inverted Outline</h1>
+        <Title text={"inverted Outline"} />
         {sizes.map((size) => (
           <ButtonContainer>
             {colors.map((color) => (
@@ -95,7 +99,7 @@ export default function Buttons() {
       </div>
 
       <div>
-        <h1 style={{ margin: '1rem' }}>Shapes</h1>
+        <Title text={"Shapes"} />
         {shapes.map((shape) => (
           <ButtonContainer>
             {colors.map((color) => (
